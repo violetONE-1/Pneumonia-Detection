@@ -3,7 +3,7 @@ Pneumonia-Detection
 Baseline Analysis
 In the initial phase of the project, a transfer learning model based on ResNet50 was implemented. While the preliminary results (as the picture) showed that the model failed to converge, with a Validation Accuracy of only ~11% and highly unstable loss curves.
 
-<img width="554" height="358" alt="initial loss and accuracy" src="https://github.com/user-attachments/assets/d8ea6708-9565-4e71-8886-ac80c15f54af" />
+<img width="554" height="358" alt="initial loss and accuracy" src="https://github.com/user-attachments/assets/5d253732-840a-4e13-9d20-d16169f2bb20" />
 
 After a thorough code review and training log analysis, the following critical issues were identified:
 
