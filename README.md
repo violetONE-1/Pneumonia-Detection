@@ -34,3 +34,19 @@ To achieve more reliable and stable evaluation metrics, I decided to re-route th
 After re-configuring the validation set to the comprehensive test directory (624 images) and applying the optimized classifier architecture, the model demonstrated significantly improved performance and stability,leading to the current stable accuracy of ~88% (as the picture shows).
 
 <img width="842" height="336" alt="final loss and accuracy" src="https://github.com/user-attachments/assets/e134d426-8898-4e0c-b46b-320f5405bd7c" />
+
+
+Project Summary
+By optimizing the model architecture and data strategy, this project achieved a stable 88.94% accuracy on a 624-image test set. The key improvements include:
+
+Architectural Refinement: Simplified the classifier head by removing redundant layers and implementing a smooth dimension reduction (2048 → 1024 → 512 → 2).
+
+Stability Enhancements: Integrated Batch Normalization and Dropout to mitigate dimension-shifting instability and prevent overfitting.
+
+Data Augmentation: Applied random rotations and horizontal flips to improve the model's ability to generalize across varied X-ray image qualities.
+
+Strategic Hyperparameters: Reduced the learning rate to 3e-4 for more precise convergence during fine-tuning.
+
+Validation Re-partitioning: Replaced the undersized 16-image validation set with the 624-image test split, ensuring statistically significant and reliable performance metrics.
+<img width="1200" height="500" alt="training_performance" src="https://github.com/user-attachments/assets/5ca0b8ac-8c5d-4ccf-a3a3-033896c38c02" />
+
