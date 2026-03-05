@@ -1,9 +1,10 @@
 Pneumonia-Detection
 
 Baseline Analysis
-In the initial phase of the project, a transfer learning model based on ResNet50 was implemented. While the preliminary results (as the picture) showed that the model failed to converge, with a Validation Accuracy of only ~11% and highly unstable loss curves.
+In the initial phase of the project, a transfer learning model based on ResNet50 was implemented. While the preliminary results (as the picture) showed that the model failed to converge, with a Validation Accuracy of only 65%~ and highly unstable loss curves.
 
-<img width="554" height="358" alt="initial loss and accuracy" src="https://github.com/user-attachments/assets/5d253732-840a-4e13-9d20-d16169f2bb20" />
+<img width="828" height="342" alt="initial loss and accuracy" src="https://github.com/user-attachments/assets/51089831-aa2e-44e1-a127-98f874f17334" />
+
 
 After a thorough code review and training log analysis, the following critical issues were identified:
 
@@ -18,3 +19,18 @@ A learning rate of 1e-3 was found to be too high for fine-tuning a pre-trained R
 
 4.Data Homogeneity:
 The initial preprocessing only utilized basic resizing and cropping. Medical images, particularly X-rays, require higher variance (rotation/flipping) to help the model generalize across different patient positions.
+
+
+Refining the Validation Strategy: Addressing Data Imbalance
+
+After implementing the initial architectural fixes, I re-trained the model but observed that the Loss and Accuracy metrics remained stagnant and exhibited significant oscillations (as the picture shows).
+
+<img width="820" height="328" alt="second loss and accuracy" src="https://github.com/user-attachments/assets/81f2a178-6254-4546-af57-d129782ce6ca" />
+
+Upon further investigation into the dataset structure provided by Kaggle, I identified that the original val directory contained only 16 samples. A single misclassification results in a 6.25% drop in accuracy.
+
+To achieve more reliable and stable evaluation metrics, I decided to re-route the validation pipeline. I swapped the sparse val set with the test set, which contains 624 images.
+
+After re-configuring the validation set to the comprehensive test directory (624 images) and applying the optimized classifier architecture, the model demonstrated significantly improved performance and stability,leading to the current stable accuracy of ~88% (as the picture shows).
+
+<img width="842" height="336" alt="final loss and accuracy" src="https://github.com/user-attachments/assets/e134d426-8898-4e0c-b46b-320f5405bd7c" />
