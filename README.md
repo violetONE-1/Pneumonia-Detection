@@ -41,7 +41,7 @@ After re-configuring the validation set to the comprehensive test directory (624
 <img width="842" height="336" alt="final loss and accuracy" src="https://github.com/user-attachments/assets/e134d426-8898-4e0c-b46b-320f5405bd7c" />
 
 
-Project Summary；
+Project Summary：
 
 By optimizing the model architecture and data strategy, this project achieved a stable 88.94% accuracy on a 624-image test set. The key improvements include:
 
