@@ -1,6 +1,11 @@
 Pneumonia-Detection
 
-Baseline Analysis
+Motivation and overview:
+
+To further my exploration of Computer Vision, I reproduced the classic Lung Image Recognition experiment (Pneumonia Detection) from Kaggle, using a ResNet50 framework.
+
+Baseline Analysis:
+
 In the initial phase of the project, a transfer learning model based on ResNet50 was implemented. While the preliminary results (as the picture) showed that the model failed to converge, with a Validation Accuracy of only 65%~ and highly unstable loss curves.
 
 <img width="828" height="342" alt="initial loss and accuracy" src="https://github.com/user-attachments/assets/51089831-aa2e-44e1-a127-98f874f17334" />
@@ -36,7 +41,8 @@ After re-configuring the validation set to the comprehensive test directory (624
 <img width="842" height="336" alt="final loss and accuracy" src="https://github.com/user-attachments/assets/e134d426-8898-4e0c-b46b-320f5405bd7c" />
 
 
-Project Summary
+Project Summary；
+
 By optimizing the model architecture and data strategy, this project achieved a stable 88.94% accuracy on a 624-image test set. The key improvements include:
 
 Architectural Refinement: Simplified the classifier head by removing redundant layers and implementing a smooth dimension reduction (2048 → 1024 → 512 → 2).
